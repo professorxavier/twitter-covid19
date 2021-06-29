@@ -1,0 +1,36 @@
+1) Commands to generate drugs mentions count
+
+grep -c " cloroquina" tweets*.csv > cloroquina.csv
+grep -c "hidroxicloroquina" tweets*.csv > hidroxicloroquina.csv
+grep -c "ivermectina" tweets*.csv > ivermectina.csv
+grep -c "azitromicina" tweets*.csv > azitromicina.csv
+grep -c "remdesivir" tweets*.csv > remdesivir.csv
+
+2) Commands to generate symptoms mentions count
+
+grep -c "febre" tweets*.csv > febre.csv
+grep -f listatosse.txt -c tweets*.csv >tosse.csv
+grep -c "falta de ar" tweets*.csv > faltadear.csv
+grep -c "coriza" tweets*.csv > coriza.csv
+grep -f listadorcabeca.txt -c tweets*.csv > dorcabeca.csv
+
+3) Commands to generate vaccines vendor mentions count
+
+grep -c "pfizer" tweets*.csv > pfizer.csv
+grep -c "jansen" tweets*.csv >jansen.csv
+grep -c "butanvac" tweets*.csv >butanvac.csv
+grep -c "sputnik" tweets*.csv >sputnik.csv
+grep -f listacoronavac.txt -c tweets*.csv > butanta.csv
+grep -f listafiocruz.txt -c tweets*.csv > fiocruz.csv
+
+4) Command to generate only covid names mentions count
+
+grep -f listacovid.txt -c tweets*.csv > onlycovid.csv
+
+5) Command to generate vaccines mentions count
+
+grep -c "vacina" tweets*.csv > vaccine.csv
+
+
+Obs: as grep command generates count by file (ex: tweets_160521.txt:250), the final csv files was generated using a simple script to convert this information to format "date,count"
+
